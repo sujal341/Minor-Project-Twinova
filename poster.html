@@ -1,0 +1,599 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Poster | TwinNova — ISA Review 3 | Team 08</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A2 portrait;
+            margin: 0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #9eaab8;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        /* ===================== POSTER SHELL ===================== */
+        .poster {
+            width: 420mm;
+            background: #fff;
+            box-shadow: 0 0 60px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* ===================== HEADER ===================== */
+        .poster-header {
+            background: linear-gradient(100deg, #001a57 0%, #0047ab 60%, #0066cc 100%);
+            color: white;
+            padding: 4mm 6mm 3.5mm;
+            display: flex;
+            align-items: center;
+            gap: 3mm;
+            border-bottom: 1.2mm solid #FFD700;
+        }
+
+        .h-logo-box {
+            width: 44mm;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1mm;
+        }
+        .h-logo-box img {
+            width: 100%;
+            filter: brightness(0) invert(1);
+        }
+        .h-logo-tagline {
+            font-size: 0.37rem;
+            text-align: center;
+            opacity: 0.75;
+            line-height: 1.4;
+            font-style: italic;
+        }
+
+        .h-center {
+            flex: 1;
+            text-align: center;
+        }
+        .h-center h1 {
+            font-size: 1.05rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+        .h-pills {
+            display: flex;
+            justify-content: center;
+            gap: 2.5mm;
+            margin-top: 2.5mm;
+        }
+        .h-pills span {
+            font-size: 0.38rem;
+            font-weight: 700;
+            border: 0.7px solid rgba(255, 215, 0, 0.7);
+            padding: 0.5mm 2.5mm;
+            border-radius: 10px;
+            letter-spacing: 0.3px;
+            color: #FFD700;
+        }
+
+        .h-spacer { width: 44mm; flex-shrink: 0; }
+
+        /* ===================== INFO BAR ===================== */
+        .info-bar {
+            background: #003080;
+            color: rgba(255,255,255,0.88);
+            padding: 2mm 6mm;
+            font-size: 0.39rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8mm;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 4mm;
+        }
+        .info-bar strong { color: #FFD700; }
+
+        /* ===================== BODY ===================== */
+        .poster-body {
+            flex: 1;
+            padding: 3mm;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2.5mm;
+            align-content: start;
+        }
+
+        /* ===================== SECTION CARD ===================== */
+        .sec {
+            border: 0.7px solid #b8cce0;
+            border-radius: 2mm;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .sec-head {
+            background: linear-gradient(to right, #001a57, #0047ab);
+            color: white;
+            padding: 1.6mm 3mm;
+            font-size: 0.50rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.35px;
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+            flex-shrink: 0;
+        }
+        .sec-num {
+            background: #FFD700;
+            color: #001a57;
+            min-width: 5mm;
+            height: 5mm;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.42rem;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+        .sec-body {
+            padding: 2mm 2.5mm;
+            font-size: 0.47rem;
+            line-height: 1.45;
+            color: #1a1a2e;
+            flex: 1;
+            background: #fafcff;
+        }
+        .sec-body img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 1mm;
+            cursor: zoom-in;
+        }
+        .sec-body p { margin-bottom: 1mm; }
+        .sec-body ul { padding-left: 3.5mm; margin-bottom: 1mm; }
+        .sec-body li { margin-bottom: 0.5mm; }
+        .sec-body strong { color: #001a57; }
+        .sec-body h5 {
+            font-size: 0.47rem;
+            font-weight: 800;
+            color: #001a57;
+            margin: 1.5mm 0 0.7mm;
+            text-transform: uppercase;
+            border-bottom: 0.5px solid #0047ab;
+            padding-bottom: 0.4mm;
+            letter-spacing: 0.2px;
+        }
+
+        /* Grid helpers */
+        .c2 { grid-column: span 2; }
+        .c3 { grid-column: span 3; }
+
+        /* ===================== BOM TABLE ===================== */
+        .bom-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.43rem;
+            margin-top: 0.5mm;
+        }
+        .bom-table thead tr { background: #001a57; color: white; }
+        .bom-table th, .bom-table td {
+            padding: 0.75mm 1.5mm;
+            border: 0.3px solid #c8d8ea;
+        }
+        .bom-table th { font-weight: 700; text-align: center; font-size: 0.41rem; }
+        .bom-table td:first-child, .bom-table td:last-child { text-align: center; }
+        .bom-table tr:nth-child(even) td { background: #eef4ff; }
+
+        /* ===================== REQUIREMENTS ===================== */
+        .req-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2mm;
+        }
+        .req-label {
+            font-size: 0.44rem;
+            font-weight: 800;
+            color: #001a57;
+            background: #e8f0fe;
+            padding: 0.7mm 2mm;
+            border-radius: 1mm;
+            margin-bottom: 1mm;
+            border-left: 2px solid #0047ab;
+        }
+
+        /* ===================== SUBSYSTEMS ===================== */
+        .subsys-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2mm;
+            margin-top: 1.5mm;
+        }
+        .subsys-box {
+            border: 0.7px solid #b0c4de;
+            border-radius: 1.5mm;
+            overflow: hidden;
+        }
+        .subsys-head {
+            background: #0047ab;
+            color: white;
+            font-size: 0.41rem;
+            font-weight: 700;
+            padding: 1mm 1.5mm;
+            text-align: center;
+        }
+        .subsys-body {
+            background: #f5f9ff;
+            min-height: 20mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.40rem;
+            color: #bbb;
+            text-align: center;
+            padding: 2mm;
+            border: 1px dashed #c0d0e0;
+            border-top: none;
+            font-style: italic;
+        }
+
+        /* ===================== FOOTER ===================== */
+        .poster-footer {
+            background: linear-gradient(to right, #001a57, #0047ab);
+            color: rgba(255,255,255,0.78);
+            padding: 1.5mm 6mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.37rem;
+            border-top: 1mm solid #FFD700;
+        }
+        .footer-tags { display: flex; gap: 4mm; }
+        .footer-tags span { font-weight: 800; opacity: 0.92; letter-spacing: 0.2px; }
+
+        /* Print */
+        @media print {
+            body { background: none; padding: 0; }
+            .poster { box-shadow: none; width: 420mm; }
+        }
+    </style>
+</head>
+<body>
+<div class="poster">
+
+    <!-- ==================== HEADER ==================== -->
+    <div class="poster-header">
+        <div class="h-logo-box">
+            <img src="assets/images/logos/KLE logo.jpeg" alt="KLE Technological University">
+            <div class="h-logo-tagline">KLE Technological University<br>Creating Value &nbsp;·&nbsp; Leveraging Knowledge</div>
+        </div>
+
+        <div class="h-center">
+            <h1>Development of a Process Twin<br>for the Smart Assembly Line</h1>
+            <div class="h-pills">
+                <span>Industrial Automation</span>
+                <span>Smart Manufacturing</span>
+                <span>Digital Twin</span>
+            </div>
+        </div>
+
+        <div class="h-spacer"></div>
+    </div>
+
+    <!-- ==================== INFO BAR ==================== -->
+    <div class="info-bar">
+        <div class="info-row">
+            <span>
+                <strong>Course:</strong> Minor Project &nbsp;|&nbsp;
+                <strong>Theme:</strong> Industrial Automation &nbsp;|&nbsp;
+                <strong>Sub-Theme:</strong> Smart Manufacturing (Digital Twin)
+            </span>
+            <span style="font-weight:700; opacity:0.7;">
+                Dept. of Automation &amp; Robotics Engineering, KLE Technological University
+            </span>
+        </div>
+        <div class="info-row">
+            <span>
+                <strong>TEAM 08:</strong>&nbsp;
+                Sujal S. Patil &nbsp;|&nbsp; Vinit V. Bangare &nbsp;|&nbsp; Sudeep S. Talwar &nbsp;|&nbsp;
+                Sneha M. Uppar &nbsp;|&nbsp; Abidali M. Mujawar
+            </span>
+            <span>
+                <strong>Mentor:</strong> Dr. Madhusudhan H. K. &nbsp;&nbsp;&nbsp;
+                <strong>Coordinator:</strong> Mr. Girish Karikatti
+            </span>
+        </div>
+    </div>
+
+    <!-- ==================== BODY GRID ==================== -->
+    <div class="poster-body">
+
+        <!-- ① PROBLEM STATEMENT + SPECIFICATIONS -->
+        <div class="sec">
+            <div class="sec-head"><span class="sec-num">1</span> Problem Statement</div>
+            <div class="sec-body">
+                <h5>Introduction</h5>
+                <p>Modern smart factories require real-time visibility, simulation capability and predictive analysis of manufacturing systems involving multiple robots, conveyors and coordinated automation. Traditional manufacturing set-ups lack dynamic simulation and synchronisation between physical and virtual models, limiting process optimisation and predictive maintenance.</p>
+
+                <h5>Project Goal</h5>
+                <p>To design and implement a fully functional <strong>Process Digital Twin</strong> of a multi-robot smart manufacturing system integrated with real-time control logic using OPC UA communication and 3DEXPERIENCE simulation environment.</p>
+
+                <h5>Specifications</h5>
+                <ul>
+                    <li><strong>Hardware:</strong> Omron NX/NJ PLC, SCARA Robot, Viper 650 Robot, Conveyor System, ASRS Units ×2, Lift Plate System, Proximity Sensors ×4, Pneumatic Cylinders ×5, Solenoid Valves ×5, SMPS 24V DC</li>
+                    <li><strong>Software:</strong> Sysmac Studio, DELMIA 3DEXPERIENCE, Control/Build Software</li>
+                    <li><strong>Communication:</strong> OPC UA Protocol (bi-directional, secure)</li>
+                    <li><strong>Response Latency:</strong> &lt; 100 ms (physical ↔ virtual)</li>
+                    <li><strong>Power Supply:</strong> 220V AC → SMPS → 24V DC</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ② FUNCTIONAL & NON-FUNCTIONAL REQUIREMENTS -->
+        <div class="sec">
+            <div class="sec-head"><span class="sec-num">2</span> Functional &amp; Non-Functional Requirements</div>
+            <div class="sec-body">
+                <div class="req-2col">
+                    <div>
+                        <div class="req-label">Functional Requirements</div>
+                        <ul>
+                            <li><strong>Real-Time Data Acquisition</strong> — Collect data from PLC, sensors &amp; actuators</li>
+                            <li><strong>PLC–Digital Twin Comms</strong> — Bi-directional data exchange via OPC UA</li>
+                            <li><strong>Real-Time Synchronisation</strong> — Accurate mapping between physical system &amp; virtual model</li>
+                            <li><strong>3D Visualisation</strong> — Display assembly line in 3DEXPERIENCE environment</li>
+                            <li><strong>Simulation &amp; Monitoring</strong> — Monitor and simulate operations in real time</li>
+                            <li><strong>Virtual Commissioning</strong> — Validate system virtually before physical deployment</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="req-label">Non-Functional Requirements</div>
+                        <ul>
+                            <li><strong>Scalability</strong> — Add more stations, robots &amp; sensors easily</li>
+                            <li><strong>Interoperability</strong> — Seamless OPC UA communication across devices</li>
+                            <li><strong>Usability</strong> — User-friendly monitoring &amp; control interface</li>
+                            <li><strong>Maintainability</strong> — Easy updates, debugging &amp; modifications</li>
+                            <li><strong>Security</strong> — Secure data exchange between PLC &amp; digital twin</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ③ BILL OF MATERIALS -->
+        <div class="sec">
+            <div class="sec-head"><span class="sec-num">3</span> Bill of Materials</div>
+            <div class="sec-body">
+                <table class="bom-table">
+                    <thead>
+                        <tr><th>S.No</th><th>Component / Part</th><th>Qty</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Omron NX/NJ PLC Controller</td><td>1</td></tr>
+                        <tr><td>2</td><td>SCARA Robot — Pick &amp; Place</td><td>1</td></tr>
+                        <tr><td>3</td><td>Viper 650 Robot — Assembly</td><td>1</td></tr>
+                        <tr><td>4</td><td>Conveyor Transfer System</td><td>1</td></tr>
+                        <tr><td>5</td><td>ASRS Rack Unit (Storage)</td><td>2</td></tr>
+                        <tr><td>6</td><td>Lift Plate Mechanism</td><td>1</td></tr>
+                        <tr><td>7</td><td>Proximity / Position Sensor</td><td>4</td></tr>
+                        <tr><td>8</td><td>Pneumatic Cylinder (Stopper)</td><td>5</td></tr>
+                        <tr><td>9</td><td>Solenoid Directional Valve</td><td>5</td></tr>
+                        <tr><td>10</td><td>SMPS 24V DC Power Supply</td><td>1</td></tr>
+                        <tr><td>11</td><td>Control/Build Software License</td><td>1</td></tr>
+                        <tr><td>12</td><td>Sysmac Studio License</td><td>1</td></tr>
+                        <tr><td>13</td><td>DELMIA 3DEXPERIENCE License</td><td>1</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ④ FUNCTION STRUCTURE / FUNCTIONAL ARCHITECTURE (spans 2 cols) -->
+        <div class="sec c2">
+            <div class="sec-head"><span class="sec-num">4</span> Function Structure Diagram / Functional Architecture</div>
+            <div class="sec-body">
+                <img src="assets/images/project/Matlab Architecture.png" alt="Functional Architecture Diagram" onclick="window.open(this.src)">
+                <p style="margin-top:1.5mm; font-size:0.42rem; color:#555; text-align:center; font-style:italic;">
+                    Bi-directional OPC UA communication between the Physical System Layer (PLC + sensors/actuators) and the Digital Twin Layer
+                    (3DEXPERIENCE/DELMIA), enabling real-time data flow and virtual control-loop feedback.
+                </p>
+            </div>
+        </div>
+
+        <!-- ⑤ FINALIZED CONCEPT (3D Sketch with labelling) -->
+        <div class="sec">
+            <div class="sec-head"><span class="sec-num">5</span> Finalized Concept</div>
+            <div class="sec-body">
+                <img src="assets/images/project/Assembly - ISO.jpeg" alt="3D Isometric Assembly Layout" onclick="window.open(this.src)">
+                <p style="margin-top:1.5mm; font-size:0.43rem;">
+                    <strong>System Layout:</strong>
+                </p>
+                <p style="font-size:0.42rem; color:#444; line-height:1.5; margin-top:0.5mm;">
+                    ASRS-1 &rarr; Lift Plate &rarr; Conveyor &rarr; SCARA Robot Station &rarr; Viper Robot Station &rarr; ASRS-2.
+                    The PLC governs all operations; OPC UA synchronises the physical assembly line with the Digital Twin in real time.
+                </p>
+            </div>
+        </div>
+
+        <!-- ⑥ PROCESS FLOW CHART -->
+        <div class="sec">
+            <div class="sec-head"><span class="sec-num">6</span> Process Flow Chart</div>
+            <div class="sec-body" style="padding:1.5mm;">
+                <img src="assets/images/project/Flowchart.jpeg" alt="Process Flow Chart" onclick="window.open(this.src)">
+            </div>
+        </div>
+
+        <!-- ⑦ CIRCUIT DESIGN -->
+        <div class="sec">
+            <div class="sec-head"><span class="sec-num">7</span> Circuit Design</div>
+            <div class="sec-body">
+                <img src="assets/images/project/Circuit diagram.png" alt="Circuit Diagram" onclick="window.open(this.src)">
+                <p style="margin-top:1.5mm; font-size:0.42rem; color:#444; line-height:1.5;">
+                    220V AC supply converted to 24V DC via SMPS. The Omron PLC receives inputs from position sensors (PS1–PS4)
+                    and controls the conveyor motor, stoppers, lift plate and robot trigger pins. Continuous OPC UA communication
+                    enables sensor-based pallet tracking.
+                </p>
+            </div>
+        </div>
+
+        <!-- ⑧ VIRTUAL PROTOTYPE — DELMIA 3DEXPERIENCE -->
+        <div class="sec">
+            <div class="sec-head"><span class="sec-num">8</span> Virtual Prototype — DELMIA Design</div>
+            <div class="sec-body" style="padding:1.5mm;">
+                <img src="assets/images/project/process-twin-main.png" alt="DELMIA Digital Twin Projection" onclick="window.open(this.src)">
+                <p style="margin-top:1.5mm; font-size:0.42rem; color:#555; text-align:center; font-style:italic;">
+                    Finalized 3DEXPERIENCE / DELMIA digital twin — full smart assembly line isometric projection.
+                </p>
+            </div>
+        </div>
+
+        <!-- ⑨ PHYSICAL PROTOTYPING — SPRINT 1 (full width) -->
+        <div class="sec c3">
+            <div class="sec-head"><span class="sec-num">9</span> Physical Prototyping — Sprint 1</div>
+            <div class="sec-body">
+                <div class="subsys-grid">
+                    <div class="subsys-box">
+                        <div class="subsys-head">Subsystem 1 — Electronics Circuit</div>
+                        <div class="subsys-body">[ Electronics wiring / circuit photos ]</div>
+                    </div>
+                    <div class="subsys-box">
+                        <div class="subsys-head">Subsystem 2 — Mechanical System</div>
+                        <div class="subsys-body">[ Mechanical assembly / fabrication photos ]</div>
+                    </div>
+                    <div class="subsys-box">
+                        <div class="subsys-head">Subsystem 3 — Control Logic &amp; Output</div>
+                        <div class="subsys-body">[ PLC ladder logic / control output images ]</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ⑩ FINAL PRODUCT (placeholder) -->
+        <div class="sec c2">
+            <div class="sec-head"><span class="sec-num">10</span> Final Product</div>
+            <div class="sec-body"
+                style="display:flex; align-items:center; justify-content:center;
+                       min-height:18mm; background:#f5f8ff;">
+                <p style="color:#ccc; font-size:0.45rem; text-align:center; font-style:italic; line-height:1.6;">
+                    [ Final product prototype photos ]<br>
+                    <span style="font-size:0.40rem; color:#ddd;">To be added after physical assembly completion</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- QR CODE SECTION -->
+        <div class="sec" style="align-items:stretch;">
+            <div class="sec-head" style="justify-content:center;">Scan for Project Portfolio</div>
+            <div class="sec-body"
+                style="display:flex; flex-direction:column; align-items:center;
+                       justify-content:center; gap:2mm; padding:3mm; background:#fafcff;">
+
+                <!-- Decorative QR SVG -->
+                <svg viewBox="0 0 100 100" style="width:22mm; height:22mm;" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100" height="100" fill="white"/>
+                    <!-- TL finder -->
+                    <rect x="5" y="5" width="28" height="28" rx="2" fill="none" stroke="#001a57" stroke-width="3.5"/>
+                    <rect x="12" y="12" width="14" height="14" rx="1" fill="#001a57"/>
+                    <!-- TR finder -->
+                    <rect x="67" y="5" width="28" height="28" rx="2" fill="none" stroke="#001a57" stroke-width="3.5"/>
+                    <rect x="74" y="12" width="14" height="14" rx="1" fill="#001a57"/>
+                    <!-- BL finder -->
+                    <rect x="5" y="67" width="28" height="28" rx="2" fill="none" stroke="#001a57" stroke-width="3.5"/>
+                    <rect x="12" y="74" width="14" height="14" rx="1" fill="#001a57"/>
+                    <!-- data modules row 1 -->
+                    <rect x="40" y="5"  w="5" h="5" fill="#001a57"/><rect x="40" y="5"  width="5" height="5" fill="#001a57"/>
+                    <rect x="48" y="5"  width="5" height="5" fill="#001a57"/>
+                    <rect x="56" y="5"  width="5" height="5" fill="#001a57"/>
+                    <rect x="40" y="13" width="5" height="5" fill="#001a57"/>
+                    <rect x="56" y="13" width="5" height="5" fill="#001a57"/>
+                    <rect x="48" y="21" width="5" height="5" fill="#001a57"/>
+                    <rect x="40" y="29" width="5" height="5" fill="#001a57"/>
+                    <rect x="56" y="29" width="5" height="5" fill="#001a57"/>
+                    <!-- data modules col 1 -->
+                    <rect x="5"  y="40" width="5" height="5" fill="#001a57"/>
+                    <rect x="13" y="40" width="5" height="5" fill="#001a57"/>
+                    <rect x="21" y="40" width="5" height="5" fill="#001a57"/>
+                    <rect x="29" y="40" width="5" height="5" fill="#001a57"/>
+                    <rect x="5"  y="48" width="5" height="5" fill="#001a57"/>
+                    <rect x="29" y="48" width="5" height="5" fill="#001a57"/>
+                    <rect x="5"  y="56" width="5" height="5" fill="#001a57"/>
+                    <rect x="13" y="56" width="5" height="5" fill="#001a57"/>
+                    <rect x="21" y="56" width="5" height="5" fill="#001a57"/>
+                    <!-- middle data -->
+                    <rect x="40" y="40" width="5" height="5" fill="#001a57"/>
+                    <rect x="56" y="40" width="5" height="5" fill="#001a57"/>
+                    <rect x="64" y="40" width="5" height="5" fill="#001a57"/>
+                    <rect x="72" y="40" width="5" height="5" fill="#001a57"/>
+                    <rect x="80" y="40" width="5" height="5" fill="#001a57"/>
+                    <rect x="88" y="40" width="5" height="5" fill="#001a57"/>
+                    <rect x="48" y="48" width="5" height="5" fill="#001a57"/>
+                    <rect x="72" y="48" width="5" height="5" fill="#001a57"/>
+                    <rect x="88" y="48" width="5" height="5" fill="#001a57"/>
+                    <rect x="40" y="56" width="5" height="5" fill="#001a57"/>
+                    <rect x="48" y="56" width="5" height="5" fill="#001a57"/>
+                    <rect x="56" y="56" width="5" height="5" fill="#001a57"/>
+                    <rect x="64" y="56" width="5" height="5" fill="#001a57"/>
+                    <rect x="80" y="56" width="5" height="5" fill="#001a57"/>
+                    <!-- bottom data -->
+                    <rect x="40" y="64" width="5" height="5" fill="#001a57"/>
+                    <rect x="48" y="64" width="5" height="5" fill="#001a57"/>
+                    <rect x="64" y="64" width="5" height="5" fill="#001a57"/>
+                    <rect x="80" y="64" width="5" height="5" fill="#001a57"/>
+                    <rect x="88" y="64" width="5" height="5" fill="#001a57"/>
+                    <rect x="40" y="72" width="5" height="5" fill="#001a57"/>
+                    <rect x="56" y="72" width="5" height="5" fill="#001a57"/>
+                    <rect x="72" y="72" width="5" height="5" fill="#001a57"/>
+                    <rect x="40" y="80" width="5" height="5" fill="#001a57"/>
+                    <rect x="48" y="80" width="5" height="5" fill="#001a57"/>
+                    <rect x="56" y="80" width="5" height="5" fill="#001a57"/>
+                    <rect x="64" y="80" width="5" height="5" fill="#001a57"/>
+                    <rect x="88" y="80" width="5" height="5" fill="#001a57"/>
+                    <rect x="40" y="88" width="5" height="5" fill="#001a57"/>
+                    <rect x="64" y="88" width="5" height="5" fill="#001a57"/>
+                    <rect x="72" y="88" width="5" height="5" fill="#001a57"/>
+                    <rect x="80" y="88" width="5" height="5" fill="#001a57"/>
+                </svg>
+
+                <div style="font-size:0.40rem; color:#444; text-align:center; line-height:1.6;">
+                    Scan to view the<br>
+                    <strong style="color:#001a57; font-size:0.43rem;">Team 08 Project Portfolio</strong>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /poster-body -->
+
+    <!-- ==================== FOOTER ==================== -->
+    <div class="poster-footer">
+        <div class="footer-tags">
+            <span>INDUSTRIAL AUTOMATION</span>
+            <span>SMART MANUFACTURING</span>
+            <span>DIGITAL TWIN</span>
+            <span>PLC</span>
+            <span>OPC UA</span>
+            <span>3DEXPERIENCE</span>
+        </div>
+        <div>KLE Technological University &nbsp;|&nbsp; Dept. of Automation &amp; Robotics Engineering &nbsp;|&nbsp; 2025–26</div>
+    </div>
+
+</div>
+</body>
+</html>

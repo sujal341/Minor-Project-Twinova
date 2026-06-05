@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme | Twinova</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="nav-scrolled">
+        <div class="nav-logo">TEAM 08 | TWINOVA <img src="assets/images/logos/KLE logo.jpeg" alt="KLE Logo" style="display: block; width: 300px; margin-top: 5px; opacity: 0.8;"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="theme.html">Theme</a></li>
+            <li><a href="problem.html">Problem Statement</a></li>
+            <li><a href="survey.html">Literature Survey</a></li>
+            <li><a href="review.html">Review Paper</a></li>
+            <li><a href="research.html">Research Paper</a></li>
+            <li><a href="gantt.html">Gantt Chart</a></li>
+            <li class="dropdown">
+                <a href="#">Detailed Design <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                <div class="dropdown-content">
+                    <a href="flowchart.html">Flowchart</a>
+                    <a href="circuit.html">Circuit Design</a>
+                    <a href="architecture.html">Architecture</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Theme Content Section -->
+    <section class="team-section" style="padding-top: 180px; min-height: 80vh;">
+        <div class="section-title" data-aos>Project Theme</div>
+        
+        <div class="glass" style="padding: 60px; max-width: 1000px; margin: 0 auto; position: relative; overflow: hidden;" data-aos>
+            <!-- Background Accent -->
+            <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: var(--primary); opacity: 0.05; filter: blur(50px); border-radius: 50%;"></div>
+            
+            <h2 style="color: var(--primary); margin-bottom: 25px; font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px;">Industrial Automation</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr; gap: 40px;">
+                <div style="border-left: 4px solid var(--primary); padding-left: 25px;">
+                    <p style="font-size: 1.25rem; line-height: 1.8; color: var(--text-main); font-weight: 300;">
+                        Industrial Automation involves the use of control systems such as <strong>PLCs, sensors, and robotic devices</strong> to automate manufacturing and industrial processes, reducing the need for human intervention.
+                    </p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                    <div class="glass" style="padding: 25px; background: rgba(255,255,255,0.03);">
+                        <i class="fas fa-microchip" style="font-size: 2rem; color: var(--primary); margin-bottom: 15px;"></i>
+                        <h4 style="margin-bottom: 10px;">Efficiency</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-dim);">Enhances productivity, accuracy, and efficiency while ensuring consistent quality.</p>
+                    </div>
+                    <div class="glass" style="padding: 25px; background: rgba(255,255,255,0.03);">
+                        <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--secondary); margin-bottom: 15px;"></i>
+                        <h4 style="margin-bottom: 10px;">Safety</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-dim);">Ensures improved safety by automating hazardous tasks and monitoring environments.</p>
+                    </div>
+                    <div class="glass" style="padding: 25px; background: rgba(255,255,255,0.03);">
+                        <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+                        <h4 style="margin-bottom: 10px;">Optimization</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-dim);">Integrates real-time data monitoring and intelligent decision-making to optimize operations.</p>
+                    </div>
+                </div>
+
+                <p style="color: var(--text-dim); font-size: 1.1rem; border-top: 1px solid var(--glass-border); padding-top: 30px;">
+                    Modern automation systems integrate real-time data monitoring and intelligent decision-making to optimize operations, paving the way for Industry 4.0 and advanced digital twin architectures.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: 50px 20px; text-align: center; border-top: 1px solid var(--glass-border);">
+        <p>&copy; 2026 Team 08 - Twinova | Department of Automation & Robotics Engineering</p>
+        <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 10px;">B.V. Bhoomaraddi College | KLE Technological University</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Simple AOS-like animation trigger
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('[data-aos]');
+            elements.forEach(el => el.classList.add('appear'));
+        });
+    </script>
+</body>
+</html>

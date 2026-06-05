@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture | Twinova</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="nav-scrolled">
+        <div class="nav-logo">TEAM 08 | TWINOVA <img src="assets/images/logos/KLE logo.jpeg" alt="KLE Logo"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="theme.html">Theme</a></li>
+            <li><a href="problem.html">Problem Statement</a></li>
+            <li><a href="survey.html">Literature Survey</a></li>
+            <li class="dropdown">
+                <a href="#">Documents <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                <div class="dropdown-content">
+                    <a href="review.html">Review Paper</a>
+                    <a href="research.html">Research Paper</a>
+                    <a href="report.html">Project Report</a>
+                    <a href="poster.html">Technical Poster</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Detailed Design <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                <div class="dropdown-content">
+                    <a href="flowchart.html">Flowchart</a>
+                    <a href="circuit.html">Circuit Design</a>
+                    <a href="architecture.html">Architecture</a>
+                </div>
+            </li>
+            <li><a href="gantt.html">Gantt Chart</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content Section -->
+    <section class="team-section" style="padding-top: 180px;">
+        <div class="section-title" data-aos>System Architecture</div>
+        <div class="glass" style="padding: 40px; max-width: 1100px; margin: 0 auto; color: var(--text-dim);" data-aos>
+            
+            <div style="margin-bottom: 40px;">
+                <h3 style="color: var(--primary); margin-bottom: 20px;">The Three-Layer Framework</h3>
+                <p style="line-height: 1.8;">
+                    Our proposed digital twin architecture for smart assembly lines is built on a robust three-layer framework designed 
+                    for seamless data flow and real-time responsiveness. This structure ensures that every physical movement is 
+                    accurately reflected in the virtual environment.
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                <!-- Physical Layer -->
+                <div class="glass" style="padding: 30px; border-top: 4px solid var(--primary);">
+                    <h4 style="color: var(--text-main); margin-bottom: 15px;">1. Physical Layer</h4>
+                    <p style="font-size: 0.9rem;">Includes the actual assembly line hardware, multi-robot systems, conveyors, and physical PLC controllers that execute the manufacturing tasks.</p>
+                </div>
+                <!-- Communication Layer -->
+                <div class="glass" style="padding: 30px; border-top: 4px solid var(--secondary);">
+                    <h4 style="color: var(--text-main); margin-bottom: 15px;">2. Communication Layer</h4>
+                    <p style="font-size: 0.9rem;">Utilizes OPC UA protocols to facilitate high-speed, standardized data exchange between the physical hardware and the digital simulation.</p>
+                </div>
+                <!-- Virtual Layer -->
+                <div class="glass" style="padding: 30px; border-top: 4px solid var(--accent);">
+                    <h4 style="color: var(--text-main); margin-bottom: 15px;">3. Virtual Layer</h4>
+                    <p style="font-size: 0.9rem;">The 3DEXPERIENCE simulation environment where the digital twin resides, providing real-time visualization and predictive analysis.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 50px; padding: 30px; background: #fff; border-radius: 15px; border: 2px solid var(--primary); text-align: center; box-shadow: 0 0 30px rgba(0,210,255,0.15);">
+                <h4 style="color: #000; margin-bottom: 20px; font-weight: 700;">MATLAB & Architecture Overview</h4>
+                <div style="overflow: hidden; border-radius: 10px;">
+                    <img src="assets/images/project/Matlab Architecture.png" alt="Matlab Architecture" style="width: 100%; height: auto; transition: transform 0.3s ease; cursor: zoom-in;" onclick="window.open(this.src)">
+                </div>
+                <div style="margin-top: 25px; text-align: justify; padding: 20px; color: #333; background: rgba(0,0,0,0.03); border-radius: 10px; line-height: 1.8; font-size: 1rem;">
+                    <strong>Architectural Integration:</strong> This diagram highlights the synergy between MATLAB/Simulink and the physical 
+                    hardware. The architecture facilitates bi-directional communication, where physical sensor data is processed in real-time 
+                    to drive the virtual model, while control signals from the simulation can influence the physical assembly line's behavior.
+                </div>
+                <p style="font-size: 0.9rem; margin-top: 15px; color: #666; font-style: italic;">(Click image to view in high resolution)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: 50px 20px; text-align: center; border-top: 1px solid var(--glass-border);">
+        <p>&copy; 2026 Team 08 - Twinova | Department of Automation & Robotics Engineering</p>
+        <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 10px;">B.V. Bhoomaraddi College | KLE Technological University</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

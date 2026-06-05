@@ -1,0 +1,50 @@
+# ── Dependency & build artifacts ──────────────────────────────────────────────
+node_modules/
+dist/
+build/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+
+# ── OS generated files ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editor / IDE ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Temporary / cache files ───────────────────────────────────────────────────
+*.tmp
+*.bak
+*.log
+table_rows.txt
+
+# ── Large binary files (use Git LFS if needed) ───────────────────────────────
+# *.pptx
+# *.pdf
+
+# ── Browser-saved page artifacts (do not track) ───────────────────────────────
+saved_resource*.html
+*-minified*.html
+RotateCookiesPage*.html
+proxy.html
+preview.html
+bscframe.html
+template.html
+css
+css(*)
+m=*
+rs=*
+cb=gapi*
+*.download
+no_results_error.svg
+gm_drive_gm_grey_24dp.png
+logo_sites_2020q4_color_2x_web_48dp.png
+pptx_extracted/

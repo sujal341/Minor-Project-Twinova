@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twinova | Review Paper</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="nav-scrolled">
+        <div class="nav-logo">TEAM 08 | TWINOVA <img src="assets/images/logos/KLE logo.jpeg" alt="KLE Logo" style="display: block; width: 300px; margin-top: 5px; opacity: 0.8;"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="theme.html">Theme</a></li>
+            <li><a href="problem.html">Problem Statement</a></li>
+            <li><a href="survey.html">Literature Survey</a></li>
+            <li class="dropdown">
+                <a href="#">Documents <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                <div class="dropdown-content">
+                    <a href="review.html">Review Paper</a>
+                    <a href="research.html">Research Paper</a>
+                    <a href="report.html">Project Report</a>
+                    <a href="poster.html">Technical Poster</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Detailed Design <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                <div class="dropdown-content">
+                    <a href="flowchart.html">Flowchart</a>
+                    <a href="circuit.html">Circuit Design</a>
+                    <a href="architecture.html">Architecture</a>
+                </div>
+            </li>
+            <li><a href="gantt.html">Gantt Chart</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content Section -->
+    <section class="team-section" style="padding-top: 180px;">
+        <div class="section-title" data-aos>Review Paper</div>
+        <div class="glass" style="padding: 40px; max-width: 1100px; margin: 0 auto; color: var(--text-dim);" data-aos>
+            <!-- Definition Section -->
+            <div style="margin-bottom: 40px; border-left: 4px solid var(--primary); padding-left: 30px; text-align: justify;">
+                <h3 style="color: var(--text-main); margin-bottom: 15px;">What is a Review Paper?</h3>
+                <p style="line-height: 1.8; font-style: italic; color: var(--text-main); font-size: 1.05rem;">
+                    A review paper is a comprehensive summary and critical evaluation of existing research on a specific topic. 
+                    Unlike original research papers that present new data, a review paper synthesizes findings from multiple 
+                    scholarly sources to identify trends, gaps, and areas for future investigation. It provides a structured 
+                    overview of the current state of knowledge, helping readers understand complex subjects without reading 
+                    every individual study. It serves as a foundational resource for researchers to build upon established 
+                    theories and methodologies.
+                </p>
+            </div>
+
+            <!-- Project Description Section -->
+            <div style="margin-top: 50px; background: rgba(255,255,255,0.03); padding: 30px; border-radius: 15px; border: 1px solid var(--glass-border); text-align: justify;">
+                <h3 style="color: var(--primary); margin-bottom: 15px;">Review Paper Overview</h3>
+                <p style="line-height: 1.8; color: var(--text-dim);">
+                    Our review paper provides a systematic analysis of the Digital Twin landscape within smart manufacturing. 
+                    We evaluate the effectiveness of various communication protocols, with a specific focus on OPC UA, for 
+                    synchronizing industrial robots like the Viper 650 and SCARA with virtual environments. The paper 
+                    synthesizes technical requirements for low-latency data exchange and proposes a standardized 
+                    architecture for integrating physical assembly line substations into a unified digital twin framework, 
+                    ensuring high-fidelity monitoring and control.
+                </p>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="Review paper IEEE format.pdf" target="_blank" class="glass" style="display: inline-block; padding: 15px 40px; color: var(--primary); text-decoration: none; font-weight: 700; border: 1px solid var(--primary); transition: all 0.3s; text-transform: uppercase;">
+                    <i class="fas fa-file-pdf" style="margin-right: 10px;"></i> Review Paper IEEE format
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: 50px 20px; text-align: center; border-top: 1px solid var(--glass-border);">
+        <p>&copy; 2026 Team 08 - Twinova | Department of Automation & Robotics Engineering</p>
+        <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 10px;">B.V. Bhoomaraddi College | KLE Technological University</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
